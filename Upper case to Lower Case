@@ -1,0 +1,4 @@
+  def to_lowercase(s: str) -> str:
+    return s.lower()
+print(to_lowercase("Hello"))  
+print(to_lowercase("here"))  
