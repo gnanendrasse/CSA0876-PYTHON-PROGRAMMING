@@ -1,0 +1,17 @@
+def gcdOfStrings(str1, str2):
+    def gcd(a, b):
+        while b:
+            a, b = b, a % b
+        return a
+    def is_divisible(s, t):
+        if len(s) % len(t) != 0:
+            return False
+        return s == t * (len(s) // len(t))
+    gcd_length = gcd(len(str1), len(str2))
+    candidate = str1[:gcd_length]
+    if is_divisible(str1, candidate) and is_divisible(str2, candidate):
+        return candidate
+    else:
+        return ""
+print(gcdOfStrings("ABABAB", "ABAB")) 
+print(gcdOfStrings("ABCABC", "ABC"))  
